@@ -3,7 +3,7 @@ import os
 import csv
 import json
 
-API_KEY = 'AIzaSyBpymiBjuDhTjX65zZaYfz3D_FMAOKFtb8'
+API_KEY = ''
 # 输出文件夹
 output_folder = 'images'
 os.makedirs(output_folder, exist_ok=True)

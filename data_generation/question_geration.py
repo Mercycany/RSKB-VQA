@@ -6,36 +6,15 @@ import openai
 import re
 
 
-# openai.api_key = 'sk-b1f8fa6eb5144513b1bc5a6b2d1c5f0a' # 你的 Forward Key
-# openai.api_base = "https://dashscope.aliyuncs.com/compatible-mode/v1"
 
-openai.api_key = 'fk228775-E4JCNFU0V72II07ToNX7vEFkwa1l1irv' # 你的 Forward Key
+openai.api_key = '' # 你的 Forward Key
 openai.api_base = "https://oa.api2d.net"
-# ##筛选已删除的图片
-# def del_json(input_json):
-#     new_json = []
-#     delete_list = []
-#     with open (input_json, 'r') as f:
-#         data = json.load(f)
-#         for item in tqdm(data):
-#             image_path = item["image"]
-#             if os.path.exists(image_path):
-#                 new_json.append(item)
-#             else:
-#                 delete_list.append(image_path)
-#     ##保存json文件
-#     with open("out_data.json", 'w') as f:
-#         json.dump(new_json, f)
-#     with open("del_data.json", 'w') as f:
-#         json.dump(delete_list, f)    
-# del_json("/home/qiaozijian/code_factory/data.json")
-
 
 def prompt_template(address,category):
 
     prompt = f"""I will provide you with a {category} remote sensing image of the location at '{address}'. Your tasks are as follows:
 1. Retrieve the relevant reference information from Wikipedia about the location '{address}', but do not include any links in your response.
-2. Generate 3 questions and their corresponding answers based on the Wikipedia content. Ensure the questions are not too difficult, and the answers are concise and straightforward.
+2. Generate 10 questions and their corresponding answers based on the Wikipedia content. Ensure the questions are not too difficult, and the answers are concise and straightforward.
 3.Do not appear "{address}" in the question, replace it with 'the image'
 4. Format your response as JSON in the following structure.  :{{"reference": "Wikipedia content", "Q&A": [{{"question": "Question 1", "answer": "Answer 1"}}, {{"question": "Question 2", "answer": "Answer 2"}}, {{"question": "Question 3", "answer": "Answer 3"}}]}}.
 """
