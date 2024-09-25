@@ -8,7 +8,7 @@
 ## Data generation
 ![Data_generation](picture/RSKBVQA.png)
  ## Model Architecture
-![Model_architecture](picture/method.pdf)
+![Model_architecture](picture/method.jpg)
 
 ## Dataset
 - ```image```
