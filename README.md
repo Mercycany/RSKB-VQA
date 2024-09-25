@@ -50,7 +50,7 @@ There are four parts in the code.
 - ```NumPy```
 - ```Peft```
 - ```langchian```
-- All experiments are performed with one A100 GPU.
+- All experiments are performed with one NVIDIA A100 GPU(80GB).
 
 ### [Parameter](#content)
 
